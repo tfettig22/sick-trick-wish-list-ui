@@ -33,9 +33,7 @@ class App extends Component {
     this.setState({ tricks: filteredTricks })
 
     fetch(`http://localhost:3001/api/v1/tricks/${id}`, {
-      method: "DELETE",
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify()
+      method: "DELETE"
     })
   }
 
