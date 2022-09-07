@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Tricks from '../Tricks/Tricks';
 import { fetchData } from '../../apiCalls';
+import Form from '../Form/Form'
 
 class App extends Component {
   constructor() {
@@ -13,19 +14,20 @@ class App extends Component {
 
   componentDidMount = () => {
     fetchData('http://localhost:3001/api/v1/tricks').then(data => {
-      console.log(data)
       this.setState({ tricks: data })
-      console.log(this.state.tricks)
     })
   }
 
-
+  addTrick = (newTrick) => {
+    this.setState({ tricks: [...this.state.tricks, newTrick] })
+  }
 
   render = () => {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Tricks tricks={this.state.tricks}/>
+        <Form addTrick={this.addTrick} />
+        <Tricks tricks={this.state.tricks} />
       </div>
     );
   }
