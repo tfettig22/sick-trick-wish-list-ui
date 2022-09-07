@@ -38,12 +38,13 @@ class Form extends Component {
   render = () => {
     return (
       <form>
-        <select name='stance' id='stance' onChange={event => this.handleChange(event)}>
+        <select className='stance' name='stance' id='stance' onChange={event => this.handleChange(event)}>
           <option value='regular'>Regular</option>
           <option value='switch'>Switch</option>
         </select>
 
         <input
+          className='name'
           type='text'
           placeholder='Name'
           name='name'
@@ -51,7 +52,7 @@ class Form extends Component {
           onChange={event => this.handleChange(event)}
         />
 
-        <select name='obstacle' id='obstacle' onChange={event => this.handleChange(event)}>
+        <select className='obstacle' name='obstacle' id='obstacle' onChange={event => this.handleChange(event)}>
           <option value='flat ground'>Flat Ground</option>
           <option value='ledge'>Ledge</option>
           <option value='rail'>Rail</option>
@@ -60,6 +61,7 @@ class Form extends Component {
         </select>
 
         <input
+          className='tutorial'
           type='text'
           placeholder='Link to Tutorial'
           name='tutorial'
@@ -67,7 +69,7 @@ class Form extends Component {
           onChange={event => this.handleChange(event)}
         />
 
-        <button onClick={event => this.submitTrick(event)}>Send It!</button>
+        <button className='send-it' onClick={event => this.submitTrick(event)}>Send It!</button>
       </form>
     )
   }

@@ -1,12 +1,14 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ name, stance, obstacle, tutorial, id }) => {
+const Card = ({ name, stance, obstacle, tutorial, id, deleteTrick }) => {
   return (
     <div className='card'>
       <p>{name}</p>
       <p>Obstacle: {obstacle}</p>
-      <a href={tutorial}>Link to tutorial video</a>
+      <p>Link to tutorial:</p>
+      <a href={tutorial}>{tutorial}</a>
+      <button className='delete-it' onClick={() => deleteTrick(id)} >Delete It!</button>
     </div>
   )
 
