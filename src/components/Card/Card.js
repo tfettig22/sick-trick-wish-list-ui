@@ -4,7 +4,7 @@ import './Card.css';
 const Card = ({ name, stance, obstacle, tutorial, id, deleteTrick }) => {
   return (
     <div className='card'>
-      <p>{name}</p>
+      <p>{stance} {name}</p>
       <p>Obstacle: {obstacle}</p>
       <p>Link to tutorial:</p>
       <a href={tutorial}>{tutorial}</a>

@@ -19,8 +19,8 @@ class Form extends Component {
   submitTrick = event => {
     event.preventDefault();
     const newTrick = {
-      id: Date.now(),
-      ...this.state
+      ...this.state,
+      id: Date.now()
     }
     this.props.addTrick(newTrick);
     this.clearInputs();
@@ -39,6 +39,7 @@ class Form extends Component {
     return (
       <form>
         <select className='stance' name='stance' id='stance' onChange={event => this.handleChange(event)}>
+          <option value=''>Choose your Stance</option>
           <option value='regular'>Regular</option>
           <option value='switch'>Switch</option>
         </select>
@@ -53,6 +54,7 @@ class Form extends Component {
         />
 
         <select className='obstacle' name='obstacle' id='obstacle' onChange={event => this.handleChange(event)}>
+          <option value=''>Choose your Obstacle</option>
           <option value='flat ground'>Flat Ground</option>
           <option value='ledge'>Ledge</option>
           <option value='rail'>Rail</option>

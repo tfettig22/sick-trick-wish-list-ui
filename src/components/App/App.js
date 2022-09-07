@@ -20,11 +20,16 @@ class App extends Component {
 
   addTrick = (newTrick) => {
     this.setState({ tricks: [...this.state.tricks, newTrick] })
+
+    fetch('http://localhost:3001/api/v1/tricks', {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newTrick)
+    })
   }
 
   deleteTrick = (id) => {
     const filteredTricks = this.state.tricks.filter(trick => trick.id !== id);
-
     this.setState({ tricks: filteredTricks })
   }
 
